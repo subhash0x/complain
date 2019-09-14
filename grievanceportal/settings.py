@@ -25,7 +25,7 @@ SECRET_KEY = 'mezxwzoqw_up81lf2b&7c!1at6gw4%aq)hzaoybuahap_&7i+y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'complain',
+    'myauth',
+    'deptadmin',
+    'assignee',
 ]
 
 MIDDLEWARE = [
@@ -48,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'complain.middlewares.UserTypeMiddleware',
 ]
 
 ROOT_URLCONF = 'grievanceportal.urls'
@@ -120,3 +124,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+AUTH_USER_MODEL = "myauth.User"
