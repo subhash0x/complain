@@ -16,9 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from complain import urls
+from deptadmin import urls
+from assignee import urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('complain/', include(urls)),
-
+    path('deptadmin/', include(urls)),
+    path('assignee/',include(urls)),
 ]
