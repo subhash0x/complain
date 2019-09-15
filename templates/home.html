@@ -1,14 +1,55 @@
-{% extends 'base.html' %}
 
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>p {text-align: center;}
+body {background-color: #1A75FF;
+	  text-align: center;
+	  }
+   </style>
+</head>
+
+
+<body>
+{% extends 'base.html' %}
+{% load static %}
 {% block title %}Home{% endblock %}
 
 {% block content %}
 {% if user.is_authenticated %}
-  Hi {{ user.username }}!
+ <img src="{% static 'nitwlogo.png' %}" width=100%/> Hi {{ user.username }}!
   <p><a href="{% url 'logout' %}">logout</a></p>
 {% else %}
   <p>You are not logged in</p>
-  <a href="{% url 'login' %}">login</a>
+ <div>
+			<img class="mySlides" src="{% static 'nitwgate.jpg' %}" style="width:100%" height= "500px">
+			<img class="mySlides" src="{% static '1KHOSTEL.jpg' %}" style="width:100%" height= "500px">
+			<img class="mySlides" src="{% static 'ig.jpg' %}" style="width:100%" height= "500px">
+			<img class="mySlides" src="{% static 'ambedkar.jpg' %}" style="width:100%" height= "500px">
+		</div>
+<script>
+			var myIndex = 0;
+			carousel();
+
+			function carousel() {
+			var i;
+			var x = document.getElementsByClassName("mySlides");
+			for (i = 0; i < x.length; i++) {
+			x[i].style.display = "none";
+			}
+			myIndex++;
+			if (myIndex > x.length) {myIndex = 1}
+			x[myIndex-1].style.display = "block";
+			setTimeout(carousel, 2000);
+			}
+		</script>
+ <a href="{% url 'login' %}">login</a>
     <a href="{% url 'signup' %}">signup</a>
 {% endif %}
 {% endblock %}
+</body>
+</html>

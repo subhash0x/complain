@@ -1,12 +1,30 @@
+<!
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  \
+  <style> h2 {text-align: center;}
+body {background-color: #1A75FF;
+	  h2 { padding-left: 6em;}
+    div {padding-left: 3em; }
+  </style>
+
+</head>
+
 {% extends 'base.html' %}
 
 {% block title %}Sign Up{% endblock %}
 
 {% block content %}
-  <h2>Sign up</h2>
-  <form method="post">
+  <body></body><h2>Sign up</h2>
+ <div> <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Sign up</button>
-  </form>
+ </form></div>
 {% endblock %}
+</body></html>
