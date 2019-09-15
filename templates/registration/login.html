@@ -19,7 +19,6 @@ body {background-color: #1A75FF;
 
 
 <body>
-  <img src="{% static 'nitwlogo.png' %} "/>
   <div>
 			<img class="mySlides" src="{% static 'nitwgate.jpg' %}" style="width:100%" height= "500px">
 			<img class="mySlides" src="{% static '1KHOSTEL.jpg' %}" style="width:100%" height= "500px">
@@ -44,10 +43,10 @@ body {background-color: #1A75FF;
 			}
 		</script>
 <h2>Login</h2>
-<form method="post">
+<form method="post" class="form-group">
   {% csrf_token %}
   {{ form.as_p }}
-  <button type="submit">Login</button>
+  <button type="submit"  class="btn btn-dark">Login</button>
 </form>
 {% endblock %}
 </body>

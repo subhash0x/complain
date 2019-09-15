@@ -12,4 +12,5 @@ from django.urls import path, include
 urlpatterns = [
     path('signup/', views.SignUp.as_view(), name='signup'),
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    path('complaintform.html',views.complaintform,name='complaintform'),
 ]

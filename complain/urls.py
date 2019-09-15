@@ -9,13 +9,12 @@ from django.shortcuts import render, redirect
 from django.views.generic.base import TemplateView
 
 
-
 urlpatterns = [
     path('test/', home),
-    #path('accounts/', include('accounts.urls')),
-    #path('', TemplateView.as_view(template_name='home.html'),
+    # path('complaintform/',complaintform),
     # path('registration/', include('django.contrib.auth.urls')),
     # path('accounts/', include('django.contrib.auth.urls')),
-    # path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    path('complaintform', TemplateView.as_view(template_name='complain/complaintform.html'), name='complaintform'),
     # url('admin/', admin.site.urls),
-    ]
+
+]
