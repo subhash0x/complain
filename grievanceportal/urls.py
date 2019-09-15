@@ -1,10 +1,13 @@
 from django.contrib import admin
+from . import settings
 from django.urls import include, path
 from complain import urls
 from django.views.generic.base import TemplateView
 from deptadmin import urls
 from assignee import urls
 from accounts import urls
+from django.contrib.staticfiles.urls import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
 urlpatterns = [
@@ -18,3 +21,5 @@ urlpatterns = [
     path('accounts/',include(urls)),
 
 ]
+urlpatterns+=staticfiles_urlpatterns()
+urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
